@@ -29,6 +29,8 @@ def create_starter_xml_tree():
     homepage.text = "https://github.com/RetroDECK/RetroDECK"
     url = SubElement(header, "url")
     url.text = "https://github.com/RetroDECK/Components"
+    romvault = SubElement(header, "romvault")
+    romvault.set("forcepacking", "fileonly")
 
     return root
 
@@ -41,7 +43,6 @@ def recurse_for_bios(d, f, *a):
     elif isinstance(d, dict):
         for k, v in d.items():
             if k == "bios":
-                print(f, a)
                 if isinstance(v, dict):
                     bios.append(v)
                 else:
@@ -59,7 +60,6 @@ def main():
         if i.is_dir():
             for j in i.iterdir():
                 if j.is_file() and j.name == "component_manifest.json":
-                    print(i.name)
                     with open(j, "r") as f:
                         data = json.load(f)
 
