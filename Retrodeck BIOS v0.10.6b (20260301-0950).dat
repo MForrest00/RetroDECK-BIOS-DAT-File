@@ -9,6 +9,7 @@
 		<author>Darrow</author>
 		<homepage>https://github.com/RetroDECK/RetroDECK</homepage>
 		<url>https://github.com/RetroDECK/Components</url>
+		<romvault forcepacking="fileonly" />
 	</header>
 	<game name="dolphin - gc">
 		<rom name="gc-dvd-20010608.bin" md5="561532ad496f644897952d2cef5bb431" description="GameCube DVD BIOS" required="Optional">
